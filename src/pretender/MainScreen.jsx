@@ -72,7 +72,7 @@ const MainScreen = () => {
         }}
         tabIndex="0"
       >
-        <Ship x={ship.offsetX} y={ship.offsetY} />
+        <Ship reversed={ship.direction == "right"} x={ship.offsetX} y={ship.offsetY} />
         <Bullet
           direction={ship.direction}
           fill="orange"
