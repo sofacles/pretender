@@ -1,6 +1,6 @@
 import React from "react";
 
-const Ship = ({ x, y, reversed=false }) => {
+const Ship = ({ x, y, reversed }) => {
   return (
     <g transform={`translate(${x},${y}) scale(0.25) ${reversed ? "scale(-1, 1)" : ""}`}>
       <path d="M180,90l6,2 4,4 -1,9 0,4 0,8 0,3 -7,4 -2,9 18,1 6,-6 2,-14 1,-16 -4,-18 -15,-1 z" fill="#acafa5" />
