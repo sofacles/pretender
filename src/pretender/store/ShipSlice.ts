@@ -18,8 +18,7 @@ export const shipSlice = createSlice({
     changeDirection: (state) => {
       let newDirection = state.direction === RIGHT ? LEFT : RIGHT;
       state.direction = newDirection;
-      state.offsetX =
-        newDirection === LEFT ? state.screenDimensions.width / 2 : 300;
+      state.offsetX = state.screenDimensions.width / 2;
     },
     updateShipY: (state, action) => {
       let theNewOffset = state.offsetY + action.payload.changeInY;
