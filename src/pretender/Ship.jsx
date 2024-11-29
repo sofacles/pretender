@@ -1,19 +1,31 @@
 import React, { useEffect, useState } from "react";
 
 const Ship = ({ isThrusting, x, y, reversed }) => {
-  const [colorIndex, setColorIndex] = useState(0);
-  const [randomX_top, setRandomX_top] = useState(0);
-  const [randomY_top, setRandomY_top] = useState(0);
-  const colors = ["#c3eb34", "#eb8934", "#bf7b3f", "#f5f4ed", "#ff0101"];
+  const [colorIndex_top1, setcolorIndex_top1] = useState(0);
+  const [colorIndex_top2, setcolorIndex_top2] = useState(0);
+
+  const [randomX_top1, setRandomX_top1] = useState(0);
+  const [randomY_top1, setrandomY_top1] = useState(0);
+
+  const [randomX_top2, setRandomX_top2] = useState(0);
+  const [randomY_top2, setrandomY_top2] = useState(0);
+
+
+  const colors = ["#c3eb34", "#eb8934", "#bf7b3f", "#f5f4ed", "#ff0101", "orange"];
 
   useEffect(() => {
     //the exhaust rectangles are 100 wide by 5 tall, so place the blinky thing somewhere in there
  
     const killInterval = setInterval(() => {
-      setColorIndex(Math.floor(Math.random() * 5));
-      setRandomX_top(Math.floor(200 + Math.random() * 100));
-      setRandomY_top(100 + Math.floor(Math.random() * 5));
-    }, 100)
+      setcolorIndex_top1(Math.floor(Math.random() * 6));
+      setRandomX_top1(Math.floor(200 + Math.random() * 99));
+      setrandomY_top1(100 + Math.floor(Math.random() * 4));
+
+      setcolorIndex_top2(Math.floor(Math.random() * 6));
+      setRandomX_top2(Math.floor(200 + Math.random() * 101));
+      setrandomY_top2(100 + Math.floor(Math.random() * 4));
+    }, 100);
+    return () => {clearInterval(killInterval)}
   }, []);
   return (
     <g transform={`translate(${x},${y}) ${reversed ? "scale(-1, 1)" : ""}`}>
@@ -22,7 +34,8 @@ const Ship = ({ isThrusting, x, y, reversed }) => {
           <path d="M200,100l100,0 0,5 -100,0 z" fill="orange" />
           <path d="M200,110l100,0 0,5 -100,0 z" fill="orange" />
           <g>
-            <path d={`M${randomX_top},${randomY_top}l8,0 0,2, -8,0 z`} fill={`${colors[colorIndex]}`} />
+            <path d={`M${randomX_top1},${randomY_top1}l8,0 0,2, -8,0 z`} fill={`${colors[colorIndex_top1]}`} />
+            <path d={`M${randomX_top2},${randomY_top2}l8,0 0,2, -8,0 z`} fill={`${colors[colorIndex_top2]}`} />
           </g>
         </g>
       }
