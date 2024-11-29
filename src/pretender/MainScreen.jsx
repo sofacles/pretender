@@ -36,6 +36,7 @@ const MainScreen = () => {
   const {
     changeShipDirection,
     go,
+    isThrusting,
     resetAnimationTimer,
     stop,
     changeShipY,
@@ -72,7 +73,7 @@ const MainScreen = () => {
         }}
         tabIndex="0"
       >
-        <Ship reversed={ship.direction == "right"} x={ship.offsetX} y={ship.offsetY} />
+        <Ship isThrusting={isThrusting} reversed={ship.direction == "right"} x={ship.offsetX} y={ship.offsetY} />
         <Bullet
           direction={ship.direction}
           fill="orange"

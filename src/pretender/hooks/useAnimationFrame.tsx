@@ -145,6 +145,7 @@ const useAnimationFrame = () => {
     changeShipY: (upOrDown: UP_DOWN_NEITHER_type) => {
       setShipMovingUpOrDown(upOrDown);
     },
+    isThrusting,
     resetAnimationTimer,
     stop: () => {
       previousTimeRef_Thrust.current = undefined;
