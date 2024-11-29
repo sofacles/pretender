@@ -10,6 +10,15 @@ const Ship = ({ isThrusting, x, y, reversed }) => {
   const [randomX_top2, setRandomX_top2] = useState(0);
   const [randomY_top2, setrandomY_top2] = useState(0);
 
+  const [colorIndex_bottom1, setcolorIndex_bottom1] = useState(0);
+  const [colorIndex_bottom2, setcolorIndex_bottom2] = useState(0);
+
+  const [randomX_bottom1, setRandomX_bottom1] = useState(0);
+  const [randomY_bottom1, setrandomY_bottom1] = useState(0);
+
+  const [randomX_bottom2, setRandomX_bottom2] = useState(0);
+  const [randomY_bottom2, setrandomY_bottom2] = useState(0);
+
 
   const colors = ["#c3eb34", "#eb8934", "#bf7b3f", "#f5f4ed", "#ff0101", "orange"];
 
@@ -24,18 +33,29 @@ const Ship = ({ isThrusting, x, y, reversed }) => {
       setcolorIndex_top2(Math.floor(Math.random() * 6));
       setRandomX_top2(Math.floor(200 + Math.random() * 101));
       setrandomY_top2(100 + Math.floor(Math.random() * 4));
+
+      setcolorIndex_bottom1(Math.floor(Math.random() * 6));
+      setRandomX_bottom1(Math.floor(200 + Math.random() * 99));
+      setrandomY_bottom1(100 + Math.floor(Math.random() * 4));
+      
+      setcolorIndex_bottom2(Math.floor(Math.random() * 6));
+      setRandomX_bottom2(Math.floor(200 + Math.random() * 101));
+      setrandomY_bottom2(110 + Math.floor(Math.random() * 4));
     }, 100);
     return () => {clearInterval(killInterval)}
   }, []);
   return (
-    <g transform={`translate(${x},${y}) ${reversed ? "scale(-1, 1)" : ""}`}>
+    <g transform={`translate(${x},${y}) scale(0.25) ${reversed ? "scale(-1, 1)" : ""}`}>
       {isThrusting &&
         <g>
-          <path d="M200,100l100,0 0,5 -100,0 z" fill="orange" />
-          <path d="M200,110l100,0 0,5 -100,0 z" fill="orange" />
+          <path d="M200,100l100,0 0,5 -100,0 z" fill="orange" opacity={0.8} />
+          <path d="M200,110l100,0 0,5 -100,0 z" fill="orange" opacity={0.8} />
           <g>
             <path d={`M${randomX_top1},${randomY_top1}l8,0 0,2, -8,0 z`} fill={`${colors[colorIndex_top1]}`} />
-            <path d={`M${randomX_top2},${randomY_top2}l8,0 0,2, -8,0 z`} fill={`${colors[colorIndex_top2]}`} />
+            <path d={`M${randomX_top2},${randomY_top2}l6,0 0,2, -8,0 z`} fill={`${colors[colorIndex_top2]}`} />
+
+            <path d={`M${randomX_bottom1},${randomY_bottom1}l8,0 0,2, -8,0 z`} fill={`${colors[colorIndex_bottom1]}`} />
+            <path d={`M${randomX_bottom2},${randomY_bottom2}l5,0 0,2, -6,0 z`} fill={`${colors[colorIndex_bottom2]}`} />
           </g>
         </g>
       }
