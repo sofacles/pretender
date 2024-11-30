@@ -21,7 +21,6 @@ const InstrumentPanel = ({ gameOffset }: OffsetMountainDataType) => {
         color: "red",
         display: "flex",
         width: "100%",
-        height: "40px",
         borderBottom: `${borderWidth} solid red`,
         background: "#000000",
       }}
