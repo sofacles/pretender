@@ -72,3 +72,10 @@ button:focus-visible {
   fill: yellow;
   font-size: 8rem;
 } 
+
+.horizontal-rect {
+  width: 80px;
+  height: 16px;
+  fill: chartreuse;
+  font-size: 3rem;
+}
