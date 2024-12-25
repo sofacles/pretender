@@ -73,7 +73,7 @@ const MainScreen = () => {
         }}
         tabIndex="0"
       >
-        <Ship isThrusting={isThrusting} reversed={ship.direction == "right"} x={ship.offsetX} y={ship.offsetY} />
+        <Ship isThrusting={isThrusting} reversed={ship.direction == "right"} x={ship.offsetX} y={ship.offsetY} showMarkers={true} />
         <Bullet
           direction={ship.direction}
           fill="orange"
