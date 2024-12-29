@@ -11,8 +11,8 @@ const GameWrapper = () => {
     <Provider store={store}>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<MainScreen />} />
-          <Route path="/keys" element={<KeyMappingsPane />} />
+          <Route path="/play" element={<MainScreen />} />
+          <Route path="/" element={<KeyMappingsPane />} />
         </Routes>
       </BrowserRouter>
     </Provider>

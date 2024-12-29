@@ -76,11 +76,11 @@ const KeyMappingsPane = () => {
         isEditing={shoot.name === keyBeingEdited}
         toggleEditMode={toggleEditModeFor}
       />
-      <footer>
-        <Link to="/" style={{ color: "red" }}>
-          Back to game
+      <div className="center-content">
+        <Link to="/play" style={{ color: "red" }}>
+          <div className="button-div">Start game</div>
         </Link>
-      </footer>
+      </div>
     </div>
   );
 };
