@@ -18,27 +18,24 @@ const KeyMappingEditor = (props: KeyMappingEditorProps) => {
     return key;
   };
 
-  const rowStyle = {
-    display: "flex",
-    justifyContent: "space-around",
-    marginTop: "20px",
-  };
   return (
-    <div style={rowStyle}>
-      <span>{name}</span>
-      {!isEditing && (
-        <>
-          <span>{normalizeKeyName(mappedKey)}</span>
-          <button
-            onClick={() => {
-              toggleEditMode(keyMapping);
-            }}
-          >
-            edit
-          </button>
-        </>
-      )}
-      {isEditing && <span>OK, press the key for {name}</span>}
+    <div className="h-center">
+      <div className="key-mapping-row">
+        <span>{name}</span>
+        {!isEditing && (
+          <>
+            <input type="text" className="key-mapping-read-only" disabled value={normalizeKeyName(mappedKey)} />
+            <button
+              onClick={() => {
+                toggleEditMode(keyMapping);
+              }}
+            >
+              edit
+            </button>
+          </>
+        )}
+        {isEditing && <><input type="text" value={normalizeKeyName(mappedKey)} /><span>OK, press the key for {name}</span></>}
+      </div>
     </div>
   );
 };

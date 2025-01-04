@@ -100,3 +100,31 @@ button:focus-visible {
   margin-top: 200px;
   width: 200px;
 }
+
+.key-mapping-read-only {
+  width: 5rem;
+  height: 1.6rem;
+}
+
+.key-mapping-read-only:disabled {
+  background-color: #000;
+  color: #fff;
+  font-size: large;
+  padding: 0.6rem;
+}
+
+.h-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+
+.key-mapping-row {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  width: 300px;
+};
