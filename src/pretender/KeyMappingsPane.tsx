@@ -16,6 +16,9 @@ const KeyMappingsPane = () => {
   const [keyBeingEdited, setKeyBeingEdited] = useState<string | undefined>(
     undefined
   );
+  const [keyThatIsGlowingAfterUpdate, setKeyThatIsGlowingAfterUpdate] = useState<string | undefined>(
+    undefined
+  );
 
   const refToPaneDiv = useRef<HTMLDivElement>(null);
 
@@ -44,7 +47,12 @@ const KeyMappingsPane = () => {
           reduxDispatch(
             updateKeyMapping({ key: keyBeingEdited, value: evt.key })
           );
-          setKeyBeingEdited(undefined);
+          setKeyThatIsGlowingAfterUpdate(keyBeingEdited);
+          setTimeout(() => {
+            setKeyThatIsGlowingAfterUpdate(undefined);
+            setKeyBeingEdited(undefined);
+          }, 1500);
+          
         }
       }}
       tabIndex={0}
@@ -53,27 +61,32 @@ const KeyMappingsPane = () => {
       <KeyMappingEditor
         keyMapping={thrust}
         isEditing={thrust.name === keyBeingEdited}
+        isGlowing={thrust.name === keyThatIsGlowingAfterUpdate}
         toggleEditMode={toggleEditModeFor}
       />
       <KeyMappingEditor
         keyMapping={shipUp}
         isEditing={shipUp.name === keyBeingEdited}
+        isGlowing={shipUp.name === keyThatIsGlowingAfterUpdate}
         toggleEditMode={toggleEditModeFor}
       />
 
       <KeyMappingEditor
         keyMapping={shipDown}
         isEditing={shipDown.name === keyBeingEdited}
+        isGlowing={shipDown.name === keyThatIsGlowingAfterUpdate}
         toggleEditMode={toggleEditModeFor}
       />
       <KeyMappingEditor
         keyMapping={changeShipDirection}
         isEditing={changeShipDirection.name === keyBeingEdited}
+        isGlowing={changeShipDirection.name === keyThatIsGlowingAfterUpdate}
         toggleEditMode={toggleEditModeFor}
       />
       <KeyMappingEditor
         keyMapping={shoot}
         isEditing={shoot.name === keyBeingEdited}
+        isGlowing={shoot.name === keyThatIsGlowingAfterUpdate}
         toggleEditMode={toggleEditModeFor}
       />
       <div className="center-content">

@@ -6,25 +6,30 @@ type KeyMappingEditorProps = {
   toggleEditMode: toggleEditModeType;
   keyMapping: KeyMappingType;
   isEditing: boolean;
+  isGlowing: boolean;
 };
 
 const KeyMappingEditor = (props: KeyMappingEditorProps) => {
-  const { toggleEditMode, isEditing, keyMapping } = props;
+  const { toggleEditMode, isEditing, isGlowing, keyMapping } = props;
   const { name, mappedKey } = keyMapping;
   const normalizeKeyName = (key: string) => {
-    if (key == " ") {
-      return "space";
+    
+    switch(key) {
+      case  " ":
+        return "space";
+      
     }
+    
     return key;
   };
 
   return (
     <div className="h-center">
-      <div className="key-mapping-row">
-        <span>{name}</span>
+      <div className={isEditing ? "key-mapping-row-editing" : "key-mapping-row"}>
+        
         {!isEditing && (
           <>
-            <input type="text" className="key-mapping-read-only" disabled value={normalizeKeyName(mappedKey)} />
+             <span>{name}</span><input type="text" className="key-mapping-read-only" disabled value={normalizeKeyName(mappedKey)} />
             <button
               onClick={() => {
                 toggleEditMode(keyMapping);
@@ -34,7 +39,11 @@ const KeyMappingEditor = (props: KeyMappingEditorProps) => {
             </button>
           </>
         )}
-        {isEditing && <><input type="text" value={normalizeKeyName(mappedKey)} /><span>OK, press the key for {name}</span></>}
+        {isEditing && !isGlowing && <div className="key-mapping-prompt">
+          <div style={{backgroundColor: "lime", height: "50px", width: "300px"}}>Press the new key for {name}</div>
+          <div style={{height: "50px", width: "100px"}}><input type="text" value="" /></div>
+          </div>}
+        {isGlowing && <div>{normalizeKeyName(mappedKey)} check!</div>}
       </div>
     </div>
   );
