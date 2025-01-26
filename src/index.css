@@ -138,17 +138,15 @@ button:focus-visible {
     align-items: center;
   }
 
- 
+
 }
 
 .throbber {
-  background-color: pink;
-  animation-duration: 2s;
-  animation-name: slide-in;
-  animation-iteration-count: infinite;
+  animation: up-and-down 1s ease-in-out infinite;
+  animation-direction: alternate;
 }
 
-@keyframes slide-in {
+@keyframes up-and-down {
   from {
     margin-top: 0;
   }
