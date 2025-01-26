@@ -17,13 +17,14 @@
   border: 1px solid aquamarine;
 }
 
-.throbber {
+.upAndDown {
   animation: up-and-down 1s ease-in-out infinite;
   animation-direction: alternate;
 
   height: 20px;
   width: 300px;
   background-color: #1a3a1c;
+  margin: auto;
 }
 
 @keyframes up-and-down {

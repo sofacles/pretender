@@ -43,7 +43,7 @@ const KeyMappingEditor = (props: KeyMappingEditorProps) => {
           <div style={{backgroundColor: "lime", height: "50px", width: "300px"}}>Press the new key for {name}</div>
           <div style={{height: "50px", width: "100px"}}><input type="text" value="" /></div>
           </div>}
-        {isGlowing && <div className="throbber">{normalizeKeyName(mappedKey)} check!</div>}
+        {isGlowing && <div className="upAndDown">{normalizeKeyName(mappedKey)} check!</div>}
       </div>
     </div>
   );

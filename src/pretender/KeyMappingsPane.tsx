@@ -48,18 +48,18 @@ const KeyMappingsPane = () => {
       <div className="purina">
       <div className="row">
           <div className="cell">
-            <div className="throbber">child of Key Mapping Pane</div>
+            <div className="upAndDown">child of Key Mapping Pane</div>
           </div>
           <div className="cell">
-            <div className="throbber">child of Key Mapping Pane</div>
+            <div className="upAndDown">child of Key Mapping Pane</div>
           </div>
         </div>
         <div className="row">
           <div className="cell">
-            <div className="throbber">child of Key Mapping Pane</div>
+            <div className="upAndDown">child of Key Mapping Pane</div>
           </div>
           <div className="cell">
-            <div className="throbber">child of Key Mapping Pane</div>
+            <div className="upAndDown">child of Key Mapping Pane</div>
           </div>
         </div>
       </div>
