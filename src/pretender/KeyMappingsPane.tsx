@@ -42,58 +42,9 @@ const KeyMappingsPane = () => {
         height: "800px",
         width: "100%",
       }}
-      onKeyDown={(evt) => {
-        if (isEditing) {
-          reduxDispatch(
-            updateKeyMapping({ key: keyBeingEdited, value: evt.key })
-          );
-          setKeyThatIsGlowingAfterUpdate(keyBeingEdited);
-          setTimeout(() => {
-            setKeyThatIsGlowingAfterUpdate(undefined);
-            setKeyBeingEdited(undefined);
-          }, 1500);
-          
-        }
-      }}
-      tabIndex={0}
-    >
-      <h1>Mappings</h1>
-      <KeyMappingEditor
-        keyMapping={thrust}
-        isEditing={thrust.name === keyBeingEdited}
-        isGlowing={thrust.name === keyThatIsGlowingAfterUpdate}
-        toggleEditMode={toggleEditModeFor}
-      />
-      <KeyMappingEditor
-        keyMapping={shipUp}
-        isEditing={shipUp.name === keyBeingEdited}
-        isGlowing={shipUp.name === keyThatIsGlowingAfterUpdate}
-        toggleEditMode={toggleEditModeFor}
-      />
-
-      <KeyMappingEditor
-        keyMapping={shipDown}
-        isEditing={shipDown.name === keyBeingEdited}
-        isGlowing={shipDown.name === keyThatIsGlowingAfterUpdate}
-        toggleEditMode={toggleEditModeFor}
-      />
-      <KeyMappingEditor
-        keyMapping={changeShipDirection}
-        isEditing={changeShipDirection.name === keyBeingEdited}
-        isGlowing={changeShipDirection.name === keyThatIsGlowingAfterUpdate}
-        toggleEditMode={toggleEditModeFor}
-      />
-      <KeyMappingEditor
-        keyMapping={shoot}
-        isEditing={shoot.name === keyBeingEdited}
-        isGlowing={shoot.name === keyThatIsGlowingAfterUpdate}
-        toggleEditMode={toggleEditModeFor}
-      />
-      <div className="center-content">
-        <Link to="/play" style={{ color: "red" }}>
-          <div className="button-div">Start game</div>
-        </Link>
-      </div>
+     >
+      Key Mapping Pane
+      <div className="throbber">child of Key Mapping Pane</div>
     </div>
   );
 };
