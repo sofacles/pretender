@@ -1,0 +1,47 @@
+.purina {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  height: 50%;
+}
+
+.cell {
+  width: 50%;
+  height: 100%;
+  border: 1px solid aquamarine;
+}
+
+.throbber {
+  animation: up-and-down 1s ease-in-out infinite;
+  animation-direction: alternate;
+
+  height: 20px;
+  width: 300px;
+  background-color: #1a3a1c;
+}
+
+@keyframes up-and-down {
+  from {
+    margin-top: 0;
+  }
+
+  to {
+    margin-top: 30px;
+  }
+}
+
+@keyframes throb {
+  from {
+    margin-top: 0;
+  }
+
+  to {
+    margin-top: 30px;
+  }
+}

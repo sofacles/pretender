@@ -141,20 +141,7 @@ button:focus-visible {
 
 }
 
-.throbber {
-  animation: up-and-down 1s ease-in-out infinite;
-  animation-direction: alternate;
-}
 
-@keyframes up-and-down {
-  from {
-    margin-top: 0;
-  }
-
-  to {
-    margin-top: 30px;
-  }
-}
 
 .h-center {
   display: flex;
