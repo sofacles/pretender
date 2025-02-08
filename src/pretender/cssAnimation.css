@@ -17,10 +17,17 @@
   border: 1px solid aquamarine;
 }
 
-.upAndDown {
-  animation: up-and-down 1s ease-in-out infinite;
-  animation-direction: alternate;
 
+.absolute-cell {
+  width: 50%;
+  height: 100%;
+  border: 1px solid aquamarine;
+  background-color: bisque;
+  position: relative;
+}
+
+.upAndDown {
+  animation: up-and-down 1s ease-in-out alternate infinite;
   height: 20px;
   width: 300px;
   background-color: #1a3a1c;
@@ -37,12 +44,34 @@
   }
 }
 
+.throbb {
+  animation: throb 1000ms linear alternate infinite;
+  background-color: #1a9a1c;
+  position: absolute;
+}
+
+.throb-text {
+left: 50%;
+top: 50%;
+height: 30px;
+position: absolute;
+margin-left: -50px;
+margin-top: -10px;
+}
+
 @keyframes throb {
   from {
-    margin-top: 0;
+    top: 160px;
+    right: 160px;
+    bottom: 160px;
+    left: 160px;
+    
   }
 
   to {
-    margin-top: 30px;
+    top: 170px;
+    right: 170px;
+    bottom: 170px;
+    left: 170px;
   }
 }

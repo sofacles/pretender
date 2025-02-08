@@ -46,12 +46,16 @@ const KeyMappingsPane = () => {
       }}
     >
       <div className="purina">
-      <div className="row">
+        <div className="row">
           <div className="cell">
             <div className="upAndDown">child of Key Mapping Pane</div>
           </div>
-          <div className="cell">
-            <div className="upAndDown">child of Key Mapping Pane</div>
+          <div className="absolute-cell">
+            
+            <div className="throbb">
+              <div className="throb-text">text in throb</div>
+            </div>
+
           </div>
         </div>
         <div className="row">
