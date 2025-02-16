@@ -39,10 +39,10 @@ const KeyMappingEditor = (props: KeyMappingEditorProps) => {
             </button>
           </>
         )}
-        {isEditing && !isGlowing && <div className="key-mapping-prompt">
-          <div style={{backgroundColor: "lime", height: "50px", width: "300px"}}>Press the new key for {name}</div>
+        {isEditing && !isGlowing && <>
+          <div className="throbbing-child">Press the new key for {name}</div>
           <div style={{height: "50px", width: "100px"}}><input type="text" value="" /></div>
-          </div>}
+          </>}
         {isGlowing && <div>{normalizeKeyName(mappedKey)} check!</div>}
       </div>
     </div>

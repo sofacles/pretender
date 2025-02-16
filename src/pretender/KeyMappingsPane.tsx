@@ -39,6 +39,7 @@ const KeyMappingsPane = () => {
       style={{
         backgroundColor: "#000",
         color: "red",
+        padding: "10px",
         height: "800px",
         width: "100%",
       }}
@@ -57,7 +58,7 @@ const KeyMappingsPane = () => {
       }}
       tabIndex={0}
     >
-      <h1>Mappings</h1>
+      <h1 className="noselect">Mappings</h1>
       <KeyMappingEditor
         keyMapping={thrust}
         isEditing={thrust.name === keyBeingEdited}

@@ -115,9 +115,9 @@ button:focus-visible {
 
 
 .key-mapping-row-editing {
-  align-items: center;
-
-  justify-content: space-around;
+  
+  display: flex;
+  position: relative;
   margin-top: 20px;
   height: 200px;
   background-color: #bbb;
@@ -129,13 +129,17 @@ button:focus-visible {
     width: 15px;
   }
 
-  .key-mapping-prompt {
-    display: flex;
-    flex-direction: column;
-    height: 200px;
-    justify-content: center;
-    align-items: center;
+  .throbbing-child {
+    background-color: lime;
+    left: 10px;
+    right: 10px;
+    position: absolute;
+    top: 10px;
+    width: auto;
+    bottom: 10px;
   }
+
+
 }
 
 .h-center {
@@ -152,4 +156,23 @@ button:focus-visible {
   justify-content: space-around;
   margin-top: 20px;
   width: 300px;
-};
+}
+
+;
+
+
+.noselect {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
