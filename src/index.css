@@ -113,6 +113,22 @@ button:focus-visible {
   padding: 0.6rem;
 }
 
+@keyframes throb {
+  from {
+      top: 40px;
+      right: 40px;
+      bottom: 40px;
+      left: 40px;
+
+  }
+
+  to {
+      top: 70px;
+      right: 70px;
+      bottom: 70px;
+      left: 70px;
+  }
+}
 
 .key-mapping-row-editing {
   
@@ -128,17 +144,20 @@ button:focus-visible {
     margin-bottom: 20px;
     width: 15px;
   }
+ 
 
   .throbbing-child {
+    animation: throb 1000ms linear alternate infinite;
     background-color: lime;
-    left: 10px;
-    right: 10px;
+    left: 40px;
+    right: 40px;
     position: absolute;
-    top: 10px;
+    top: 40px;
     width: auto;
-    bottom: 10px;
+    bottom: 40px;
   }
 
+  
 
 }
 
