@@ -157,7 +157,14 @@ button:focus-visible {
     bottom: 40px;
   }
 
-  
+  .key-selection-prompt {
+    bottom: 40%;
+    left: 28%;
+    right: 35%;
+    position: absolute;
+    top: 45%;
+    width: 13rem;
+  }
 
 }
 
