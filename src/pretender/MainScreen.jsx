@@ -95,8 +95,17 @@ const MainScreen = () => {
           y={ship.offsetY}
         />
 
+
+
+  <svg x="100" y="80" width="200" height="150" viewBox="0 0 200 150" style={{ backgroundColor: "#e2e8f0" }}>
+   
+    <rect x="0" y="0" width="200" height="150" fill="none" stroke="#3b82f6" stroke-width="2" />
+    <circle cx="100" cy="75" r="40" fill="#ef4444" />
+    <text x="15" y="25" font-family="sans-serif" font-size="12" fill="#1e293b">Nested SVG (x:100, y:80)</text>
+  </svg>
+
         <Mountains />
-      </svg>
+ </svg>
     </>
   );
 };

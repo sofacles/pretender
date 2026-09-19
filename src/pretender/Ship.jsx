@@ -3,14 +3,10 @@ import { SHIP_HEIGHT, SHIP_WIDTH } from "./Constants";
 
 const Ship = ({ x, y }) => {
   return (
-    <rect
-      data-testid="ship"
-      x={x}
-      y={y}
-      width={SHIP_WIDTH}
-      height={SHIP_HEIGHT}
-      fill="#678A32"
-    />
+
+	
+	 <line x1="0" y1="80" x2="100" y2="20" stroke="pink" />
+
   );
 };
 
