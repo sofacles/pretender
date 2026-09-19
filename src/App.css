@@ -46,7 +46,7 @@
 
 
 #shipFlyingRight .s0 {
-  fill: #000101
+  fill: transparent;
 }
 
 #shipFlyingRight .s1 {

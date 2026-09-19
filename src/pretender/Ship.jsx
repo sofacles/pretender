@@ -4,8 +4,8 @@ const Ship = ({ x, y }) => {
 
 
 
-    <svg version="1.2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 117 57" x={x} y={y}
-      width="117" height="57">
+    <svg version="1.2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 117 57" fill="transparent"
+      x={x} y={y} width="117" height="57">
 
       <g id="shipFlyingRight">
         <path id="Path 0" className="s0" d="m0 57v-57h33l-12 3 1 4 10 2 9-9h76v56l-8-1-2 2z" />
