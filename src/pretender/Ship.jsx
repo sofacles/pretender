@@ -1,5 +1,8 @@
-import React from "react";
+import {useSelector} from "react-redux";
+import { LEFT } from "./Constants"
 const Ship = ({ x, y }) => {
+
+  const ship = useSelector((state) => state.ship);
   return (
     <svg
       version="1.2"
@@ -8,6 +11,7 @@ const Ship = ({ x, y }) => {
       viewBox="0 0 117 57" fill="transparent"
       x={x}
       y={y}
+      transform={ship.direction === LEFT ? `translate(${ship.offsetX},${ship.offsetY}) scale(-1, 1) translate(-${ship.offsetX},-${ship.offsetY})` : ``}
       width="48"
       height="20">
       <g id="shipFlyingRight">
