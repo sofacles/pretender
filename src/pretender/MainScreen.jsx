@@ -1,7 +1,5 @@
-import React, { useEffect, useRef } from "react";
-
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
+import { useEffect, useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 import Bullet from "./Bullet";
 import useAnimationFrame from "./hooks/useAnimationFrame";
@@ -12,6 +10,7 @@ import Mountains from "./Mountains";
 import Ship from "./Ship";
 import { updateGameDimensions } from "./store/MountainsSlice";
 import { updateScreenDimensions } from "./store/ShipSlice";
+import { SHIP_HEIGHT } from "./Constants";
 
 const MainScreen = () => {
   const screenRef = useRef();
@@ -79,21 +78,21 @@ const MainScreen = () => {
             fill="orange"
             isVisible={bullets[0].isVisible}
             x={bullets[0].location.x}
-            y={ship.offsetY}
+            y={ship.offsetY + SHIP_HEIGHT}
           />
           <Bullet
             direction={ship.direction}
             fill="green"
             isVisible={bullets[1].isVisible}
             x={bullets[1].location.x}
-            y={ship.offsetY}
+            y={ship.offsetY + SHIP_HEIGHT}
           />
           <Bullet
             direction={ship.direction}
             fill="blue"
             isVisible={bullets[2].isVisible}
             x={bullets[2].location.x}
-            y={ship.offsetY}
+            y={ship.offsetY + SHIP_HEIGHT}
           />
 
 
