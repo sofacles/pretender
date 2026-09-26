@@ -9,6 +9,7 @@ import { useScreenDimensions } from "./hooks/useScreenDimensions";
 import InstrumentPanel from "./InstrumentPanel";
 import Mountains from "./Mountains";
 import Ship from "./Ship";
+import AudioPlayer from "./AudioPlayer";
 import { updateGameDimensions } from "./store/MountainsSlice";
 import { updateScreenDimensions } from "./store/ShipSlice";
 import { SHIP_HEIGHT } from "./Constants";
@@ -98,6 +99,7 @@ const MainScreen = () => {
 
           <Mountains />
         </svg>
+        <AudioPlayer />
       </div>
     </div>
   );

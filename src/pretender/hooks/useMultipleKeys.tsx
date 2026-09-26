@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { UP_DOWN_NEITHER } from "../Constants";
 import { RootState } from "../store/store";
 import { UseMultipleKeysPropsType } from "../types";
-import { updateIsThrusting } from "../store/ShipSlice";
+import { updateIsThrusting, updateIsShooting } from "../store/ShipSlice";
 
 //I want to be able to test the ship moving up and down, but I'm having trouble getting the onKeyDown handler to be called
 // in a unit test, which is because React or maybe react-testing-library doesn't really handle svg elements.
@@ -68,6 +68,7 @@ export const useMultipleKeys = ({
       currentlyPressedKeys.get(shoot.mappedKey)
     ) {
       fireShotHandler();
+      reduxDispatch(updateIsShooting(true));
     }
   };
 
@@ -84,8 +85,13 @@ export const useMultipleKeys = ({
       changeShipYHandler(UP_DOWN_NEITHER.NEITHER);
     }
 
+    if(plainKey === shoot.mappedKey) {
+     // reduxDispatch(updateIsShooting(false));
+    }
+
     evt.preventDefault();
   };
 
   return { onKeyDown, onKeyUp };
+
 };
