@@ -33,6 +33,7 @@ export type ShipDataType = {
   offsetX: number;
   offsetY: number;
   screenDimensions: { height: number; width: number };
+  isThrusting: boolean;
 };
 
 export type UP_DOWN_NEITHER_type = "UP" | "DOWN" | "NEITHER";

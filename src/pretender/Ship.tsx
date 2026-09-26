@@ -1,8 +1,10 @@
 import { useSelector } from "react-redux";
 import { LEFT } from "./Constants"
-const Ship = ({ x, y }) => {
+import { RootState } from "./store/store";
 
-  const ship = useSelector((state) => state.ship);
+const Ship = ({ x, y }: {x: number; y: number}) => {
+
+  const ship = useSelector((state: RootState) => state.ship);
   return (
 
     <svg
