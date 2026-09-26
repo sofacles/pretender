@@ -4,6 +4,7 @@ const Ship = ({ x, y }) => {
 
   const ship = useSelector((state) => state.ship);
   return (
+    
     <svg
       version="1.2"
       role="img"
@@ -14,7 +15,7 @@ const Ship = ({ x, y }) => {
       transform={ship.direction === LEFT ? `translate(${ship.offsetX},${ship.offsetY}) scale(-1, 1) translate(-${ship.offsetX},-${ship.offsetY})` : ``}
       width="48"
       height="20">
-      <g id="shipFlyingRight">
+      {ship.isThrusting &&  <g id="shipFlyingRight">
         <path id="Path 0" className="s0" d="m0 57v-57h33l-12 3 1 4 10 2 9-9h76v56l-8-1-2 2z" />
         <path id="Path 19" className="s3" d="m67 38l1-1h3l1 1v4h-5v-1-2z" />
         <path id="Path 21" className="s8" d="m60 38l1-1h6v1 1 2 1h-1-9-1l1-2 4 1z" />
@@ -22,6 +23,7 @@ const Ship = ({ x, y }) => {
         <path id="Path 29" className="s7" d="m78 37v-1h24v1z" />
         <path id="Path 35" className="s8" d="m72 36l27-1-4-2h1 7 2v2l-1 1h-2-24z" />
         <path id="Path 37" className="s8" d="m35 36v-3h4v3h-3z" />
+       <path id="Path 38" className="s14" d="m-1 30l-1-2v-1h1 4l1 2v1z" />
         <path id="Path 39" className="s3" d="m105 33v-1h5v5h-5v-1-1z" />
         <path id="Path 40" className="s6" d="m103 33v-1h2v1z" />
         <path id="Path 45" className="s11" d="m18 38l1-6h4l1 1v1l-1 8h-4l-1-1v-2z" />
@@ -52,7 +54,9 @@ const Ship = ({ x, y }) => {
         <path id="Path 144" className="s1" d="m41 0l-9 9-10-2-1-4 12-3z" />
         <path id="Path 145" className="s1" d="m109 55l8 1v1h-10z" />
       </g>
+}
     </svg>
+    
 
   );
 };

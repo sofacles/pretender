@@ -7,6 +7,7 @@ export const shipSlice = createSlice({
   name: "ship",
   initialState: {
     direction: RIGHT,
+    isThrusting: false,
     offsetX: 300,
     offsetY: 300,
     screenDimensions: {
@@ -19,6 +20,9 @@ export const shipSlice = createSlice({
       let newDirection = state.direction === RIGHT ? LEFT : RIGHT;
       state.direction = newDirection;
       state.offsetX = newDirection === LEFT ? state.offsetX + 50 : state.offsetX - 50;
+    },
+    updateIsThrusting: (state, action) => {
+      state.isThrusting = action.payload;
     },
     updateShipY: (state, action) => {
       let theNewOffset = state.offsetY + action.payload.changeInY;
@@ -39,6 +43,9 @@ export const shipSlice = createSlice({
   },
 });
 
-export const { changeDirection, updateShipY, updateScreenDimensions } =
+export const { changeDirection,
+  updateShipY,
+  updateScreenDimensions,
+  updateIsThrusting } =
   shipSlice.actions;
 export default shipSlice.reducer;
