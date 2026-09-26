@@ -1,6 +1,5 @@
-import React from "react";
 import { LEFT, SHIP_WIDTH } from "./Constants";
-import { BulletPropsType, DirectionType } from "./types";
+import { BulletPropsType } from "./types";
 
 const Bullet = (props: BulletPropsType) => {
   const { direction, isVisible, x, y, fill } = props;

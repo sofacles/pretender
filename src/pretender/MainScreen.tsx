@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
+import { RootState } from "./store/store";
 import Bullet from "./Bullet";
 import useAnimationFrame from "./hooks/useAnimationFrame";
 import { useMultipleKeys } from "./hooks/useMultipleKeys";
@@ -13,10 +14,10 @@ import { updateScreenDimensions } from "./store/ShipSlice";
 import { SHIP_HEIGHT } from "./Constants";
 
 const MainScreen = () => {
-  const screenRef = useRef();
-  const ship = useSelector((state) => state.ship);
-  const bullets = useSelector((state) => state.bullets);
-  const mountains = useSelector((state) => state.mountains);
+  const screenRef = useRef<SVGSVGElement | null>(null);
+  const ship = useSelector((state: RootState) => state.ship);
+  const bullets = useSelector((state: RootState) => state.bullets);
+  const mountains = useSelector((state: RootState) => state.mountains);
 
   const screenSize = useScreenDimensions();
   const dispatch = useDispatch();
@@ -53,7 +54,6 @@ const MainScreen = () => {
   return (
     <div className="App" style={{ width: "100%", height: "100%" }}>
       <InstrumentPanel
-        shipOffset={ship.offsetY}
         gameOffset={mountains.gameOffset}
       />
       <div style={{ width: "100%", height: "90%" }}>
@@ -70,7 +70,7 @@ const MainScreen = () => {
             position: "relative",
             backgroundColor: "#000000",
           }}
-          tabIndex="0"
+          tabIndex={0}
         >
           <Ship x={ship.offsetX} y={ship.offsetY} />
           <Bullet

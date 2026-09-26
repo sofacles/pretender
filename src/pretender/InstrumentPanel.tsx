@@ -1,12 +1,9 @@
-import React, { useContext } from "react";
-
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 import { RootState } from "./store/store";
-import { OffsetMountainDataType } from "./types";
 
-const InstrumentPanel = ({ gameOffset }: OffsetMountainDataType) => {
+const InstrumentPanel = ({ gameOffset }: {gameOffset: number}) => {
   //subBoxes are the three boxes of the control panel: lives, pilots map, and controlPanel
   const shipState = useSelector((store: RootState) => store.ship);
   const mountainStore = useSelector((store: RootState) => store.mountains);

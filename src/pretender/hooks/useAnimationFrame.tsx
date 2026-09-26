@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../store/store";
@@ -19,11 +19,10 @@ import { UP_DOWN_NEITHER_type } from "../types";
 import { updateGameOffset } from "../store/MountainsSlice";
 import { changeDirection, updateShipY } from "../store/ShipSlice";
 import { useScreenDimensions } from "./useScreenDimensions";
-import { Root } from "react-dom/client";
 
 const useAnimationFrame = () => {
   const reduxDispatch = useDispatch();
-  const { bullets, mountains, ship } = useSelector((state: RootState) => {
+  const { bullets, ship } = useSelector((state: RootState) => {
     return state;
   });
   const screenSize = useScreenDimensions();

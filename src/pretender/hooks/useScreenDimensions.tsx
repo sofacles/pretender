@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { INSTRUMENT_PANEL_HEIGHT } from "../Constants";
 
-function useScreenDimensions() {
+function useScreenDimensions(): { height: number; width: number } {
   const [screenSize, setScreenSize] = useState({ height: 800, width: 1000 });
 
   useEffect(() => {

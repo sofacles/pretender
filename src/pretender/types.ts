@@ -23,8 +23,9 @@ export type BulletPropsType = {
 };
 
 export type OffsetMountainDataType = {
-  gameOffset: number;
-  allPointsCorrected: PointType[];
+    allPointsCorrected: PointType[];
+    gameOffset: number;
+shipOffset: number;
   screenDimensions: screenDimensionsType;
 };
 
@@ -33,17 +34,18 @@ export type ShipDataType = {
   offsetX: number;
   offsetY: number;
   screenDimensions: { height: number; width: number };
+  isThrusting: boolean;
 };
 
 export type UP_DOWN_NEITHER_type = "UP" | "DOWN" | "NEITHER";
 
 export type UseMultipleKeysPropsType = {
-  goHandler: () => {};
-  resetAnimationHandler: () => {};
-  stopHandler: () => {};
-  changeShipYHandler: (upDownNeither: UP_DOWN_NEITHER_type) => {};
-  changeShipDirectionHandler: () => {};
-  fireShotHandler: () => {};
+  goHandler: () => void;
+  resetAnimationHandler: () => void;
+  stopHandler: () => void;
+  changeShipYHandler: (upDownNeither: UP_DOWN_NEITHER_type) => void;
+  changeShipDirectionHandler: () => void;
+  fireShotHandler: () => void;
 };
 
 export type KeyMappingType = {

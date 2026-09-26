@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { KeyMappingType } from "./types";
 
 type toggleEditModeType = (keyMapping: KeyMappingType) => void;
