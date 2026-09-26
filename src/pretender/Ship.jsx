@@ -34,13 +34,11 @@ const Ship = ({ x, y }) => {
         <path id="Path 29" className="s7" d="m78 37v-1h24v1z" />
         <path id="Path 35" className="s8" d="m72 36l27-1-4-2h1 7 2v2l-1 1h-2-24z" />
         <path id="Path 37" className="s8" d="m35 36v-3h4v3h-3z" />
-        
         <path id="Path 39" className="s3" d="m105 33v-1h5v5h-5v-1-1z" />
         <path id="Path 40" className="s6" d="m103 33v-1h2v1z" />
         <path id="Path 54" className="s6" d="m83 32v-1h1 4l6 1h1 1v1h-1-2-2z" />
         <path id="Path 62" className="s12" d="m40 29l10-1 1 5 9 1-3 4-2 4h-6-1-4-1-1l-2-10v-1-1z" />
         <path id="Path 63" className="s9" d="m48 41h1v1h-1zm-5 0h1v1h-1zm-3-11h1v1h-1z" />
-        
         <path id="Path 66" className="s13" d="m84 28l4-1v4h-4v-2z" />
         <path id="Path 67" className="s8" d="m77 31l-1-3-14-1h1 7 4 2 1v1 1z" />
         <path id="Path 69" className="s11" d="m88 27v-1h1l5 2v3 1l-6-1z" />
@@ -60,8 +58,6 @@ const Ship = ({ x, y }) => {
         <path id="Path 145" className="s1" d="m109 55l8 1v1h-10z" />
       </g>
     </svg>
-
-
   );
 };
 
