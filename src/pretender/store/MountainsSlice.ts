@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import peaks from "../MountainData.js";
-import { OffsetMountainDataType, PointType } from "../types";
+import { PointType } from "../types";
 import { PANEL_WIDTH } from "../Constants";
 import { RootState } from "./store";
 

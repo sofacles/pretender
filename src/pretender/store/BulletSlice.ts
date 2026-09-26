@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { BulletPropsType, DirectionType } from "../types";
+import { DirectionType } from "../types";
 
 const defaultBulletPositions = [
   {
