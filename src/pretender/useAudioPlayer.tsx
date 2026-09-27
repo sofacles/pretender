@@ -1,10 +1,10 @@
-import { useEffect, useRef} from 'react';
+import { memo, useEffect, useRef} from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from './store/store';
 import mySound from '../assets/sounds/pow.mp3';
 
 
-const AudioPlayer = () => {
+const useAudioPlayer = () => {
     const audioRef = useRef(new Audio(mySound));
     const ship = useSelector((state: RootState) => state.ship);
     useEffect(() => {
@@ -16,12 +16,7 @@ const AudioPlayer = () => {
         }
     }, [ship.isShooting]);
 
-    return (
-        <div>
-            {/* Hidden or visible audio tag linked via ref */}
+    
+};
 
-        </div>
-    );
-}
-
-export default AudioPlayer;
+export default useAudioPlayer;
