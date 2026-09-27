@@ -86,7 +86,9 @@ export const useMultipleKeys = ({
     }
 
     if(plainKey === shoot.mappedKey) {
-     // reduxDispatch(updateIsShooting(false));
+     setTimeout(() => {
+       reduxDispatch(updateIsShooting(false));
+     }, 100);
     }
 
     evt.preventDefault();

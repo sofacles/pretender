@@ -1,34 +1,25 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef} from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from './store/store';
+import mySound from '../assets/sounds/pow.mp3';
+
 
 const AudioPlayer = () => {
-    const audioRef = useRef<HTMLAudioElement | null>(null);
-    const isShooting = useSelector((state: RootState) => state.ship.isShooting);
-
+    const audioRef = useRef(new Audio(mySound));
+    const ship = useSelector((state: RootState) => state.ship);
     useEffect(() => {
-        if (audioRef.current) {
-            if (isShooting) {
-                audioRef.current.pause();
-                audioRef.current.src = "/sounds/pow.mp3";
-                // Reset audio to start if it's already playing
-                audioRef.current.currentTime = 0;
-                audioRef.current.play().catch((error) => {
-                    console.log("Playback blocked or failed:", error);
-                });
-            } else {
-                //audioRef.current.pause();
-            }
+        if (!ship.isShooting) {
+            audioRef.current.pause();
+            audioRef.current.currentTime = 0;
+        } else {
+            audioRef.current.play();
         }
-    }, [isShooting]); // This effect runs whenever isShooting changes
+    }, [ship.isShooting]);
 
     return (
         <div>
             {/* Hidden or visible audio tag linked via ref */}
-            <audio
-                ref={audioRef}
-                src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"
-            />
+
         </div>
     );
 }
