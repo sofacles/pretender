@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import { RootState } from "./store/store";
 
-const InstrumentPanel = ({ gameOffset }: {gameOffset: number}) => {
+const InstrumentPanel = () => {
   //subBoxes are the three boxes of the control panel: lives, pilots map, and controlPanel
   const shipState = useSelector((store: RootState) => store.ship);
   const mountainStore = useSelector((store: RootState) => store.mountains);
@@ -30,7 +30,7 @@ const InstrumentPanel = ({ gameOffset }: {gameOffset: number}) => {
       <div
         style={{ ...subBoxStyle, borderRight: `${borderWidth} solid red` }}
       ></div>
-      <div style={subBoxStyle}>gameOffset: {gameOffset}</div>
+      <div style={subBoxStyle}>gameOffset: {mountainStore.gameOffset}</div>
       <div style={subBoxStyle}>ship offsetX: {shipState.offsetX}</div>
       <div style={subBoxStyle}>
         state.screenDimensions.height: {mountainStore.screenDimensions.height}

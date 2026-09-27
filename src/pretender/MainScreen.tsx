@@ -53,9 +53,7 @@ const MainScreen = () => {
 
   return (
     <div className="App" style={{ width: "100%", height: "100%" }}>
-      <InstrumentPanel
-        gameOffset={mountains.gameOffset}
-      />
+      <InstrumentPanel />
       <div style={{ width: "100%", height: "90%" }}>
         <svg
           height={mountains.screenDimensions.height}
