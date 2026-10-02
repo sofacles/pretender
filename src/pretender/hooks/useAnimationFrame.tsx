@@ -17,7 +17,7 @@ import {
 
 import { UP_DOWN_NEITHER_type } from "../types";
 import { updateGameOffset } from "../store/MountainsSlice";
-import { changeDirection, updateShipY } from "../store/ShipSlice";
+import { changeDirection, updateIsShooting, updateShipY } from "../store/ShipSlice";
 import { useScreenDimensions } from "./useScreenDimensions";
 
 const useAnimationFrame = () => {
@@ -164,6 +164,8 @@ const useAnimationFrame = () => {
             shipX: ship.offsetX,
           })
         );
+        //play the sound
+        reduxDispatch(updateIsShooting(true));
       }
     },
   };

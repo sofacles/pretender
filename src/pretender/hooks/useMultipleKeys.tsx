@@ -62,7 +62,6 @@ export const useMultipleKeys = () => {
       currentlyPressedKeys.get(shootKeyMapping.mappedKey)
     ) {
       shoot();
-      reduxDispatch(updateIsShooting(true));
     }
   };
 
