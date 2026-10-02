@@ -17,14 +17,16 @@ import {
 
 import { UP_DOWN_NEITHER_type } from "../types";
 import { updateGameOffset } from "../store/MountainsSlice";
-import { changeDirection, updateShipY } from "../store/ShipSlice";
+import { changeDirection, updateIsShooting, updateShipY } from "../store/ShipSlice";
 import { useScreenDimensions } from "./useScreenDimensions";
 
 const useAnimationFrame = () => {
   const reduxDispatch = useDispatch();
-  const { bullets, ship } = useSelector((state: RootState) => {
+  const { bullets : theBullets, ship } = useSelector((state: RootState) => {
     return state;
   });
+  
+  const bullets = theBullets.defaultBulletPositions;
   const screenSize = useScreenDimensions();
 
   const PX_PER_SECOND = 800;
@@ -153,7 +155,7 @@ const useAnimationFrame = () => {
       reduxDispatch(changeDirection());
     },
     shoot: () => {
-      const nextBulletIndex = bullets.findIndex((b) => b.isVisible === false);
+      const nextBulletIndex = theBullets.defaultBulletPositions.findIndex((b) => b.isVisible === false);
       if (nextBulletIndex !== -1) {
         reduxDispatch(
           startBullet({
@@ -162,6 +164,8 @@ const useAnimationFrame = () => {
             shipX: ship.offsetX,
           })
         );
+        //play the sound
+        reduxDispatch(updateIsShooting(true));
       }
     },
   };

@@ -22,9 +22,9 @@ export const shipSlice = createSlice({
       state.direction = newDirection;
       state.offsetX = newDirection === LEFT ? state.offsetX + 50 : state.offsetX - 50;
     },
-      updateIsThrusting: (state, action) => {
-        state.isThrusting = action.payload;
-      },
+    updateIsThrusting: (state, action) => {
+      state.isThrusting = action.payload;
+    },
     updateIsShooting: (state, action) => {
       state.isShooting = action.payload;
     },

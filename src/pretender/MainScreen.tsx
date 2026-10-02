@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { RootState } from "./store/store";
 import Bullet from "./Bullet";
-import useAnimationFrame from "./hooks/useAnimationFrame";
 import { useMultipleKeys } from "./hooks/useMultipleKeys";
 import { useScreenDimensions } from "./hooks/useScreenDimensions";
 import InstrumentPanel from "./InstrumentPanel";
@@ -16,7 +15,7 @@ import { SHIP_HEIGHT } from "./Constants";
 const MainScreen = () => {
   const screenRef = useRef<SVGSVGElement | null>(null);
   const ship = useSelector((state: RootState) => state.ship);
-  const bullets = useSelector((state: RootState) => state.bullets);
+  const bullets = useSelector((state: RootState) => state.bullets.defaultBulletPositions);
   const mountains = useSelector((state: RootState) => state.mountains);
 
   const screenSize = useScreenDimensions();
@@ -33,23 +32,7 @@ const MainScreen = () => {
     }
   }, []);
 
-  const {
-    changeShipDirection,
-    go,
-    resetAnimationTimer,
-    stop,
-    changeShipY,
-    shoot,
-  } = useAnimationFrame();
-
-  const { onKeyDown, onKeyUp } = useMultipleKeys({
-    changeShipDirectionHandler: changeShipDirection,
-    changeShipYHandler: changeShipY,
-    goHandler: go,
-    resetAnimationHandler: resetAnimationTimer,
-    fireShotHandler: shoot,
-    stopHandler: stop,
-  });
+    const { onKeyDown, onKeyUp } = useMultipleKeys();
 
   return (
     <div className="App" style={{ width: "100%", height: "100%" }}>
