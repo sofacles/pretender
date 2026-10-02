@@ -15,7 +15,7 @@ import { SHIP_HEIGHT } from "./Constants";
 const MainScreen = () => {
   const screenRef = useRef<SVGSVGElement | null>(null);
   const ship = useSelector((state: RootState) => state.ship);
-  const bullets = useSelector((state: RootState) => state.bullets);
+  const bullets = useSelector((state: RootState) => state.bullets.defaultBulletPositions);
   const mountains = useSelector((state: RootState) => state.mountains);
 
   const screenSize = useScreenDimensions();

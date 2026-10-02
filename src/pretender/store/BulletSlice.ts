@@ -1,29 +1,32 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { DirectionType } from "../types";
 
-const defaultBulletPositions = [
-  {
-    direction: "right",
-    location: { x: 0, y: 0 },
-    isVisible: false,
-    tStart: 0,
-    lastTimeStamp: 0,
-  },
-  {
-    direction: "right",
-    location: { x: 0, y: 0 },
-    isVisible: false,
-    tStart: 0,
-    lastTimeStamp: 0,
-  },
-  {
-    direction: "right",
-    location: { x: 0, y: 0 },
-    isVisible: false,
-    tStart: 0,
-    lastTimeStamp: 0,
-  },
-];
+const initialState = {
+  defaultBulletPositions: [
+    {
+      direction: "right",
+      location: { x: 0, y: 0 },
+      isVisible: false,
+      tStart: 0,
+      lastTimeStamp: 0,
+    },
+    {
+      direction: "right",
+      location: { x: 0, y: 0 },
+      isVisible: false,
+      tStart: 0,
+      lastTimeStamp: 0,
+    },
+    {
+      direction: "right",
+      location: { x: 0, y: 0 },
+      isVisible: false,
+      tStart: 0,
+      lastTimeStamp: 0,
+    },
+  ],
+  numberOfBulletsInFlight: 0,
+};
 
 export interface startBulletActionType {
   index: number;
@@ -40,11 +43,11 @@ export interface MoveBulletActionType {
 
 const bulletSlice = createSlice({
   name: "bulletSlice",
-  initialState: defaultBulletPositions,
+  initialState: initialState,
   reducers: {
     moveBulletRight: (state, action) => {
       const { index, pixelsToMove, screenWidth } = action.payload;
-      let bullet = state[index];
+      let bullet = state.defaultBulletPositions[index];
       if (bullet.location.x > screenWidth - 100) {
         bullet.isVisible = false;
         bullet.location.x = 0;
@@ -58,7 +61,7 @@ const bulletSlice = createSlice({
 
     moveBulletLeft: (state, action) => {
       const { index, pixelsToMove } = action.payload;
-      let bullet = state[index];
+      let bullet = state.defaultBulletPositions[index];
       if (bullet.location.x < 100) {
         bullet.isVisible = false;
         bullet.location.x = 0;
@@ -75,7 +78,7 @@ const bulletSlice = createSlice({
       action: { type: string; payload: startBulletActionType }
     ) => {
       const { direction, index, lastTimeStamp, shipX, tStart } = action.payload;
-      let bullet = state[index];
+      let bullet = state.defaultBulletPositions[index];
       bullet.isVisible = true;
       bullet.location.x = shipX;
       bullet.tStart = tStart || 0;
