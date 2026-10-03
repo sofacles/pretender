@@ -8,6 +8,7 @@ import { useScreenDimensions } from "./hooks/useScreenDimensions";
 import InstrumentPanel from "./InstrumentPanel";
 import Mountains from "./Mountains";
 import Ship from "./Ship";
+import Lander from "./Lander";
 import { updateGameDimensions } from "./store/MountainsSlice";
 import { updateScreenDimensions } from "./store/ShipSlice";
 import { SHIP_HEIGHT } from "./Constants";
@@ -32,7 +33,7 @@ const MainScreen = () => {
     }
   }, []);
 
-    const { onKeyDown, onKeyUp } = useMultipleKeys();
+  const { onKeyDown, onKeyUp } = useMultipleKeys();
 
   return (
     <div className="App" style={{ width: "100%", height: "100%" }}>
@@ -76,7 +77,7 @@ const MainScreen = () => {
             y={ship.offsetY + SHIP_HEIGHT}
           />
 
-
+          <Lander />
           <Mountains />
         </svg>
       </div>
