@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { LEFT, RIGHT } from "../Constants";
+import { LEFT, RIGHT, SHIP_HEIGHT } from "../Constants";
 
-const halfShipHeight = 25;
+const halfShipHeight = SHIP_HEIGHT / 2;
+const CORRECTION_FOR_BOTTOM_OF_SCREEN = 20; //The ship is a little taller than the SHIP_HEIGHT constant, so we need to correct for that when checking if the ship is at the bottom of the screen
 
 export const shipSlice = createSlice({
   name: "ship",
@@ -35,8 +36,8 @@ export const shipSlice = createSlice({
         theNewOffset = halfShipHeight;
       }
       //  or at the bottom
-      else if (theNewOffset > state.screenDimensions.height - halfShipHeight) {
-        theNewOffset = state.screenDimensions.height - halfShipHeight;
+      else if (theNewOffset > state.screenDimensions.height - SHIP_HEIGHT - CORRECTION_FOR_BOTTOM_OF_SCREEN) {
+        theNewOffset = state.screenDimensions.height - SHIP_HEIGHT - CORRECTION_FOR_BOTTOM_OF_SCREEN;
       }
 
       state.offsetY = theNewOffset;

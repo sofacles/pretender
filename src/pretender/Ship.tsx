@@ -15,8 +15,8 @@ const Ship = ({ x, y }: {x: number; y: number}) => {
       x={x}
       y={y}
       transform={ship.direction === LEFT ? `translate(${ship.offsetX},${ship.offsetY}) scale(-1, 1) translate(-${ship.offsetX},-${ship.offsetY})` : ``}
-      width="48"
-      height="20">
+      width="72"
+      height="30">
       <g id="shipFlyingRight">
         <path id="Path 0" className="s0" d="m0 57v-57h33l-12 3 1 4 10 2 9-9h76v56l-8-1-2 2z" />
         <path id="Path 19" className="s3" d="m67 38l1-1h3l1 1v4h-5v-1-2z" />
